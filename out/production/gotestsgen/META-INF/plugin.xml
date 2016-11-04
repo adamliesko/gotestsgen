@@ -1,0 +1,37 @@
+<idea-plugin version="2">
+  <id>com.adamliesko.gotests.plugin</id>
+  <name>Gotestsgen</name>
+  <version>0.0.1</version>
+  <vendor email="adamliesko@gmail.com" url="https://github.com/adamliesko">Adam Lieskovsky</vendor>
+
+  <description><![CDATA[
+      Gotestgen is a  plugin for Jetbrains products, that uses <em>gotests</em> to generate table driven tests from selected function and method signatures.
+    ]]></description>
+
+  <change-notes><![CDATA[
+      0.0.1 - Generate test based on selected function
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="gotestsgenerate" class="com.adamliesko.gotests.plugin.TestGenerator" icon="/icons/go-brown.png" text="Gotests generate test"
+            description="Generates Go table driven tests">
+      <add-to-group group-id="CodeMenu" anchor="last"/>
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+      <add-to-group group-id="EditorLangPopupMenu" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
